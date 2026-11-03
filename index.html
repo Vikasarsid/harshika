@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday, Harshika</title>
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Happy Birthday, Harshika 🎂">
+<meta property="og:description" content="A little something for your birthday. Tap the candles!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #ffe3ec; --rose: #ff6f91; --berry: #d6336c; --ink: #3b2340;
+    --sun: #ffc94d; --mint: #7fd8be; --sky: #8ec5ff; --lilac: #c3a6ff; --paper: #fffaf6;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: 'Fredoka', system-ui, sans-serif; color: var(--ink);
+    background-color: var(--pink);
+    background-image: radial-gradient(rgba(214,51,108,.18) 1.6px, transparent 1.6px);
+    background-size: 22px 22px; overflow-x: hidden; min-height: 100vh;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; position: relative; z-index: 1; }
+  section { margin-top: 56px; }
+  h2 { font-weight: 600; font-size: clamp(22px, 5vw, 28px); text-align: center; margin: 0 0 20px; }
+
+  /* Balloons */
+  .balloons { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .balloon {
+    position: absolute; bottom: -140px; width: 54px; height: 66px; border-radius: 50% 50% 48% 48%;
+    animation: rise linear infinite; opacity: .85;
+  }
+  .balloon::after {
+    content: ''; position: absolute; left: 50%; top: 100%; width: 1px; height: 70px; background: rgba(59,35,64,.3);
+  }
+  @keyframes rise {
+    0% { transform: translate(0, 0) rotate(-4deg); }
+    50% { transform: translate(18px, -60vh) rotate(4deg); }
+    100% { transform: translate(-10px, -125vh) rotate(-4deg); }
+  }
+
+  /* Header */
+  header { text-align: center; padding-top: 12px; }
+  .hello { font-size: clamp(22px, 6vw, 30px); font-weight: 500; margin: 0 0 10px; }
+  .name { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px; margin: 0; }
+  .name span {
+    display: inline-block; font-size: clamp(40px, 12vw, 76px); font-weight: 700; line-height: 1;
+    color: #fff; padding: .08em .14em; border-radius: .22em;
+    border: 4px solid #fff; box-shadow: 0 5px 0 rgba(59,35,64,.18);
+    animation: bob 2.6s ease-in-out infinite;
+  }
+  @keyframes bob { 50% { transform: translateY(-6px) rotate(var(--r)); } }
+  .sub { margin: 16px 0 0; font-size: 17px; }
+
+  /* Cake */
+  .cake-wrap { text-align: center; }
+  .cake { position: relative; width: 240px; margin: 0 auto; padding-top: 70px; }
+  .candles { position: absolute; top: 6px; left: 0; right: 0; display: flex; justify-content: center; gap: 34px; }
+  .candle {
+    position: relative; width: 16px; height: 58px; border: 0; padding: 0; cursor: pointer; border-radius: 4px;
+    background: repeating-linear-gradient(135deg, #fff 0 6px, var(--rose) 6px 12px);
+  }
+  .flame {
+    position: absolute; left: 50%; top: -26px; width: 16px; height: 24px; margin-left: -8px;
+    background: radial-gradient(circle at 50% 70%, #fff6c9 0 25%, var(--sun) 45%, #ff8c42 80%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; animation: flicker .25s ease-in-out infinite alternate;
+    transform-origin: 50% 100%; transition: opacity .3s, transform .3s;
+  }
+  .candle.out .flame { opacity: 0; transform: scale(.2); }
+  .candle.out::before {
+    content: ''; position: absolute; left: 50%; top: -30px; width: 6px; height: 20px; margin-left: -3px;
+    background: rgba(120,120,120,.4); border-radius: 50%; filter: blur(3px); animation: smoke 1.4s forwards;
+  }
+  @keyframes flicker { to { transform: scaleY(1.12) rotate(3deg); } }
+  @keyframes smoke { to { transform: translateY(-30px) scale(2); opacity: 0; } }
+  .tier { margin: 0 auto; border-radius: 14px 14px 8px 8px; position: relative; }
+  .tier.top { width: 170px; height: 62px; background: #fff; }
+  .tier.top::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -12px; height: 24px;
+    background: radial-gradient(circle at 12px 0, #fff 12px, transparent 13px) 0 0 / 24px 24px repeat-x;
+  }
+  .tier.bottom { width: 230px; height: 84px; background: var(--rose); margin-top: 0; }
+  .tier.bottom::before {
+    content: ''; position: absolute; inset: 30px 0 auto; height: 10px;
+    background: repeating-linear-gradient(90deg, var(--sun) 0 12px, transparent 12px 24px);
+  }
+  .plate { width: 270px; height: 16px; margin: 0 auto; background: #fff; border-radius: 50%; box-shadow: 0 6px 0 rgba(59,35,64,.12); }
+  .hint { margin: 18px 0 12px; font-size: 15px; }
+  .btn {
+    font: inherit; font-weight: 600; font-size: 17px; border: 0; cursor: pointer;
+    background: var(--berry); color: #fff; padding: 12px 26px; border-radius: 999px;
+    box-shadow: 0 5px 0 #9e1f4e; transition: transform .1s, box-shadow .1s;
+  }
+  .btn:active { transform: translateY(4px); box-shadow: 0 1px 0 #9e1f4e; }
+  .wish { min-height: 28px; font-family: 'Caveat', cursive; font-size: 30px; font-weight: 700; color: var(--berry); margin: 14px 0 0; }
+
+  /* Pune pass */
+  .pass {
+    display: flex; background: var(--paper); border-radius: 18px; overflow: hidden;
+    box-shadow: 0 10px 0 rgba(59,35,64,.08), 0 14px 30px rgba(214,51,108,.15); transform: rotate(-1.2deg);
+  }
+  .pass-main { flex: 1; padding: 22px 22px 20px; }
+  .pass-stub {
+    width: 118px; background: var(--sun); display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border-left: 3px dashed rgba(59,35,64,.35); position: relative; text-align: center; padding: 12px 8px;
+  }
+  .pass-stub::before, .pass-stub::after {
+    content: ''; position: absolute; left: -14px; width: 26px; height: 26px; border-radius: 50%; background: var(--pink);
+  }
+  .pass-stub::before { top: -13px; } .pass-stub::after { bottom: -13px; }
+  .admit { font-weight: 700; font-size: 22px; line-height: 1.05; }
+  .stub-small { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; margin-top: 6px; }
+  .pass-tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--berry); }
+  .pass-title { font-size: clamp(26px, 7vw, 34px); font-weight: 700; margin: 4px 0 14px; }
+  .pass-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+  .pass-grid dt { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; opacity: .6; }
+  .pass-grid dd { margin: 2px 0 0; font-weight: 600; font-size: 16px; }
+  .route { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; margin-bottom: 14px; }
+  .route i { flex: 1; border-top: 2px dashed rgba(59,35,64,.3); position: relative; }
+  .route i::after { content: '✈'; position: absolute; left: 50%; top: -14px; font-style: normal; font-size: 16px; }
+
+  /* Flip cards */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .card { perspective: 900px; height: 190px; cursor: pointer; border: 0; padding: 0; background: none; font: inherit; color: inherit; }
+  .card-inner { position: relative; width: 100%; height: 100%; transition: transform .6s cubic-bezier(.2,.8,.2,1); transform-style: preserve-3d; }
+  .card.flipped .card-inner { transform: rotateY(180deg); }
+  .face {
+    position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 18px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; text-align: center;
+    box-shadow: 0 6px 0 rgba(59,35,64,.12);
+  }
+  .front { color: var(--ink); }
+  .front .emoji { font-size: 44px; }
+  .front .label { font-weight: 600; font-size: 17px; margin-top: 8px; }
+  .front .tap { font-size: 12px; opacity: .6; margin-top: 6px; }
+  .back { background: #fff; transform: rotateY(180deg); font-size: 16px; line-height: 1.4; }
+
+  /* Note */
+  .note {
+    background: var(--paper); padding: 28px 24px 24px; border-radius: 6px; transform: rotate(1deg);
+    box-shadow: 0 12px 28px rgba(59,35,64,.12); position: relative;
+    background-image: repeating-linear-gradient(transparent 0 35px, rgba(142,197,255,.45) 35px 36px);
+    font-family: 'Caveat', cursive; font-size: 25px; line-height: 36px;
+  }
+  .note::before {
+    content: ''; position: absolute; top: -14px; left: 50%; width: 110px; height: 28px; margin-left: -55px;
+    background: rgba(255,201,77,.75); transform: rotate(-3deg);
+  }
+  .note p { margin: 0 0 36px; }
+  .note p:last-child { margin: 0; }
+  .sign { text-align: right; font-weight: 700; color: var(--berry); }
+  footer { text-align: center; font-size: 14px; opacity: .6; margin-top: 40px; }
+
+  #confetti { position: fixed; inset: 0; pointer-events: none; z-index: 5; }
+
+  @media (max-width: 420px) {
+    .pass { flex-direction: column; }
+    .pass-stub { width: auto; flex-direction: row; gap: 12px; border-left: 0; border-top: 3px dashed rgba(59,35,64,.35); }
+    .pass-stub::before, .pass-stub::after { display: none; }
+    .stub-small { margin-top: 0; }
+    .card { height: 200px; }
+    .back { font-size: 15px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .balloon, .name span, .flame { animation: none; }
+    .balloon { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="balloons" aria-hidden="true" id="balloons"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<main>
+  <header>
+    <p class="hello">Happy Birthday,</p>
+    <h1 class="name" aria-label="Harshika" id="name"></h1>
+    <p class="sub">Today is all about you 🎉</p>
+  </header>
+
+  <section class="cake-wrap" aria-label="Birthday cake">
+    <div class="cake">
+      <div class="candles">
+        <button class="candle" aria-label="Blow out candle 1"><span class="flame"></span></button>
+        <button class="candle" aria-label="Blow out candle 2"><span class="flame"></span></button>
+        <button class="candle" aria-label="Blow out candle 3"><span class="flame"></span></button>
+      </div>
+      <div class="tier top"></div>
+      <div class="tier bottom"></div>
+      <div class="plate"></div>
+    </div>
+    <p class="hint">Make a wish, then tap each candle 🕯️</p>
+    <button class="btn" id="blowAll">Blow them all out</button>
+    <p class="wish" id="wish" aria-live="polite"></p>
+  </section>
+
+  <section aria-label="Pune Pass">
+    <div class="pass">
+      <div class="pass-main">
+        <span class="pass-tag">Birthday special</span>
+        <div class="pass-title">Pune Pass</div>
+        <div class="route"><span>You</span><i></i><span>Pune</span></div>
+        <dl class="pass-grid">
+          <div><dt>Passenger</dt><dd>Harshika</dd></div>
+          <div><dt>Valid</dt><dd>Anytime (sooner is better)</dd></div>
+          <div><dt>Includes</dt><dd>Chai + city tour</dd></div>
+          <div><dt>Issued by</dt><dd>Vikas</dd></div>
+        </dl>
+      </div>
+      <div class="pass-stub">
+        <div class="admit">Admit<br>One</div>
+        <div class="stub-small">No expiry</div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="A few things I like about you">
+    <h2>A few things I like about you</h2>
+    <div class="cards">
+      <button class="card"><div class="card-inner">
+        <div class="face front" style="background:var(--sky)"><div class="emoji">💭</div><div class="label">Your thoughts</div><div class="tap">tap to flip</div></div>
+        <div class="face back">The way you think about things always makes me see them a little differently.</div>
+      </div></button>
+      <button class="card"><div class="card-inner">
+        <div class="face front" style="background:var(--sun)"><div class="emoji">☀️</div><div class="label">Your positive vibes</div><div class="tap">tap to flip</div></div>
+        <div class="face back">Every conversation with you leaves me in a better mood than before.</div>
+      </div></button>
+      <button class="card"><div class="card-inner">
+        <div class="face front" style="background:var(--mint)"><div class="emoji">💬</div><div class="label">Our chats</div><div class="tap">tap to flip</div></div>
+        <div class="face back">Talking to you feels like I&rsquo;ve known you for years.</div>
+      </div></button>
+      <button class="card"><div class="card-inner">
+        <div class="face front" style="background:var(--lilac)"><div class="emoji">☕</div><div class="label">A small invite</div><div class="tap">tap to flip</div></div>
+        <div class="face back">Come to Pune soon. The chai and misal are on me 😄</div>
+      </div></button>
+    </div>
+  </section>
+
+  <section aria-label="A note">
+    <div class="note">
+      <p>Happy birthday, Harshika!</p>
+      <p>We&rsquo;ve met only once, but talking to you has become one of the nicest parts of my days. Thanks for the good thoughts and the good vibes.</p>
+      <p>Wishing you a year full of happiness, success and everything you&rsquo;ve been hoping for. Stay the way you are.</p>
+      <p class="sign">&mdash; Vikas</p>
+    </div>
+  </section>
+
+  <footer>Made with 💖 for your birthday</footer>
+</main>
+
+<script>
+  // Sticker letters
+  const colors = ['#ff6f91', '#ffc94d', '#7fd8be', '#8ec5ff', '#c3a6ff', '#ff8c42', '#d6336c', '#5fb8a0'];
+  const nameEl = document.getElementById('name');
+  [...'HARSHIKA'].forEach((ch, i) => {
+    const s = document.createElement('span');
+    s.textContent = ch;
+    s.setAttribute('aria-hidden', 'true');
+    const r = (i % 2 ? 4 : -4) + 'deg';
+    s.style.cssText = 'background:' + colors[i % colors.length] + ';transform:rotate(' + r + ');--r:' + r + ';animation-delay:' + (i * .12) + 's';
+    nameEl.appendChild(s);
+  });
+
+  // Balloons
+  const bWrap = document.getElementById('balloons');
+  for (let i = 0; i < 9; i++) {
+    const b = document.createElement('div');
+    b.className = 'balloon';
+    const size = 40 + Math.random() * 26;
+    b.style.cssText = 'left:' + ((i / 9) * 100 + Math.random() * 6) + '%;width:' + size + 'px;height:' + (size * 1.22) + 'px;' +
+      'background:' + colors[i % colors.length] + ';animation-duration:' + (14 + Math.random() * 10) + 's;animation-delay:' + (-Math.random() * 20) + 's';
+    bWrap.appendChild(b);
+  }
+
+  // Confetti
+  const cv = document.getElementById('confetti'), cx = cv.getContext('2d');
+  let parts = [], running = false;
+  const resize = () => { cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio; cx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0); };
+  addEventListener('resize', resize); resize();
+  function burst(n = 160) {
+    for (let i = 0; i < n; i++) parts.push({
+      x: innerWidth / 2 + (Math.random() - .5) * 120, y: innerHeight * .45,
+      vx: (Math.random() - .5) * 14, vy: -Math.random() * 15 - 4, s: 5 + Math.random() * 6,
+      c: colors[i % colors.length], r: Math.random() * 6, vr: (Math.random() - .5) * .3, life: 0
+    });
+    if (!running) { running = true; requestAnimationFrame(tick); }
+  }
+  function tick() {
+    cx.clearRect(0, 0, innerWidth, innerHeight);
+    parts.forEach(p => {
+      p.vy += .32; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.r += p.vr; p.life++;
+      cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r); cx.fillStyle = p.c;
+      cx.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); cx.restore();
+    });
+    parts = parts.filter(p => p.y < innerHeight + 40 && p.life < 400);
+    if (parts.length) requestAnimationFrame(tick); else { running = false; cx.clearRect(0, 0, innerWidth, innerHeight); }
+  }
+
+  // Candles
+  const candles = [...document.querySelectorAll('.candle')];
+  const wish = document.getElementById('wish');
+  function check() {
+    if (candles.every(c => c.classList.contains('out'))) {
+      wish.textContent = 'Your wish is on its way ✨';
+      document.getElementById('blowAll').textContent = 'Light them again';
+      burst(220);
+      setTimeout(() => burst(120), 450);
+    }
+  }
+  candles.forEach(c => c.addEventListener('click', () => {
+    if (c.classList.contains('out')) return;
+    c.classList.add('out'); check();
+  }));
+  document.getElementById('blowAll').addEventListener('click', () => {
+    if (candles.every(c => c.classList.contains('out'))) {
+      candles.forEach(c => c.classList.remove('out'));
+      wish.textContent = '';
+      document.getElementById('blowAll').textContent = 'Blow them all out';
+      return;
+    }
+    candles.forEach((c, i) => setTimeout(() => { c.classList.add('out'); if (i === 2) check(); }, i * 180));
+    document.getElementById('blowAll').textContent = 'Light them again';
+  });
+
+  // Flip cards
+  document.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => c.classList.toggle('flipped')));
+</script>
+</body>
+</html>
